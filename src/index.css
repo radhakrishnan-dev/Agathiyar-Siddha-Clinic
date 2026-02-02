@@ -1,0 +1,253 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Siddha Doctor - Calm, Natural, Medical-Friendly Design System */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Core Background Colors - Warm, Natural Tones */
+    --background: 45 30% 97%;
+    --foreground: 150 30% 15%;
+
+    /* Card & Surface Colors */
+    --card: 45 40% 99%;
+    --card-foreground: 150 30% 15%;
+
+    --popover: 45 40% 99%;
+    --popover-foreground: 150 30% 15%;
+
+    /* Primary - Forest Green */
+    --primary: 150 40% 25%;
+    --primary-foreground: 45 30% 97%;
+
+    /* Secondary - Soft Sage */
+    --secondary: 140 25% 90%;
+    --secondary-foreground: 150 30% 20%;
+
+    /* Muted - Subtle Beige */
+    --muted: 40 20% 94%;
+    --muted-foreground: 150 15% 45%;
+
+    /* Accent - Warm Gold */
+    --accent: 38 70% 50%;
+    --accent-foreground: 45 30% 97%;
+
+    /* Herbal Green - Light variant */
+    --herbal: 145 35% 92%;
+    --herbal-foreground: 150 40% 20%;
+
+    /* Nature Green - Highlight */
+    --nature: 142 40% 40%;
+    --nature-foreground: 45 30% 97%;
+
+    /* Cream Background */
+    --cream: 40 40% 96%;
+    --cream-foreground: 150 30% 15%;
+
+    /* Destructive */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border & Input */
+    --border: 140 20% 85%;
+    --input: 140 20% 88%;
+    --ring: 150 40% 25%;
+
+    --radius: 0.75rem;
+
+    /* Sidebar */
+    --sidebar-background: 45 30% 97%;
+    --sidebar-foreground: 150 30% 20%;
+    --sidebar-primary: 150 40% 25%;
+    --sidebar-primary-foreground: 45 30% 97%;
+    --sidebar-accent: 140 25% 90%;
+    --sidebar-accent-foreground: 150 30% 20%;
+    --sidebar-border: 140 20% 85%;
+    --sidebar-ring: 150 40% 25%;
+
+    /* Custom Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(140 25% 90%) 0%, hsl(45 40% 96%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(45 40% 99%) 0%, hsl(140 25% 96%) 100%);
+    --gradient-button: linear-gradient(135deg, hsl(150 40% 25%) 0%, hsl(145 35% 30%) 100%);
+    --gradient-nature: linear-gradient(135deg, hsl(145 35% 92%) 0%, hsl(40 40% 96%) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(150 30% 15% / 0.08);
+    --shadow-card: 0 8px 30px -8px hsl(150 30% 15% / 0.1);
+    --shadow-button: 0 4px 14px -2px hsl(150 40% 25% / 0.25);
+  }
+
+  .dark {
+    --background: 150 25% 8%;
+    --foreground: 45 30% 95%;
+
+    --card: 150 20% 12%;
+    --card-foreground: 45 30% 95%;
+
+    --popover: 150 20% 12%;
+    --popover-foreground: 45 30% 95%;
+
+    --primary: 142 40% 45%;
+    --primary-foreground: 150 25% 8%;
+
+    --secondary: 150 20% 18%;
+    --secondary-foreground: 45 30% 90%;
+
+    --muted: 150 15% 18%;
+    --muted-foreground: 45 20% 65%;
+
+    --accent: 38 60% 55%;
+    --accent-foreground: 150 25% 8%;
+
+    --herbal: 145 25% 15%;
+    --herbal-foreground: 142 40% 70%;
+
+    --nature: 142 40% 50%;
+    --nature-foreground: 150 25% 8%;
+
+    --cream: 40 20% 12%;
+    --cream-foreground: 45 30% 95%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 150 15% 20%;
+    --input: 150 15% 20%;
+    --ring: 142 40% 45%;
+
+    --sidebar-background: 150 25% 8%;
+    --sidebar-foreground: 45 30% 90%;
+    --sidebar-primary: 142 40% 45%;
+    --sidebar-primary-foreground: 150 25% 8%;
+    --sidebar-accent: 150 20% 18%;
+    --sidebar-accent-foreground: 45 30% 90%;
+    --sidebar-border: 150 15% 20%;
+    --sidebar-ring: 142 40% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  .card-gradient {
+    background: var(--gradient-card);
+  }
+
+  .nature-gradient {
+    background: var(--gradient-nature);
+  }
+
+  .text-gradient-primary {
+    background: linear-gradient(135deg, hsl(150 40% 25%) 0%, hsl(142 40% 40%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-button {
+    box-shadow: var(--shadow-button);
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in-delay {
+    animation: fadeIn 0.6s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-soft {
+    animation: pulseSoft 2s ease-in-out infinite;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes pulseSoft {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+}
